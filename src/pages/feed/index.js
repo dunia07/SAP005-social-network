@@ -78,10 +78,6 @@ export const Feed = () => {
   //   return loadPosts();
   // }
 
-  return rootElement;
-  
-};
-
   const logOut = rootElement.querySelector('.btn-logout');
   logOut.addEventListener('click', () => {
     SignOut();

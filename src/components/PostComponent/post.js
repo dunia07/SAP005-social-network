@@ -1,36 +1,34 @@
+/* eslint-disable no-console */
 function renderPost(user) {
-  const postDiv = document.querySelector('.posted-text');// div onde oS postS ficarão
-  // FUNCÃO QUE TRÁS A COLEÇÃO DO USER LOGADO
-  firebase.firestore().collection('posts').where('userUID', '==', user.uid).get()
+  const postContainer = document.querySelector('.posted-text');
+  firebase.firestore().collection('posts').where('user', '==', user.uid).get()
     .then((querySnapshot) => {
       querySnapshot.forEach((post) => {
-        const postData = post.data(); //  parâmetro firebase, data=dados.
+        const database = post.data();
         const postElement = `
-        <ul>
-          <li>${postData.name}</li>
-          <li>
-            <img src=${postData.image} alt="User Picture">
-          <li>
-          <li>${postData.date}</li>
-          <li>${postData.text}</li> 
-          <li>Like ${postData.likes}</li>
-          <li>
-            <input class="comment" placeholder="Comment" type="text">
-            <button>Send</button>
-          </li>
-        </ul>`;
-        postDiv.innerHTML += postElement;
+          <ul>
+            <li>${database.name}</li>
+            <li>
+              <img src=${database.image} alt="Image">
+            <li>
+            <li>${database.date} ${database.time}</li>
+            <li>${database.text}</li>
+            <li>${database.likes}</li>
+            <li>
+              <input class="comment" placeholder="Comment" type="text">
+              <button class="btn-comment">Send</button>
+            </li>
+          </ul>`;
+        postContainer.innerHTML += postElement;
       });
     })
     .catch(() => {
       const postElement = `
-      <ul>
-        <li>Sem Posts</li> 
-      </ul>`;
-      postDiv.innerHTML += postElement;
+        <h1>Error on load please try later</h1>`;
+      postContainer.innerHTML = postElement;
     });
 }
-// FUNÇÃO QUE MANTÉM O ESTADO DE LOGADO
+
 export const showPosts = () => firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     renderPost(user);

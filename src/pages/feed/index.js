@@ -15,7 +15,6 @@ export const Feed = () => {
       <div class="posted-text"></div>
     </div> `;
   showPosts();
-
   rootElement.innerHTML = postHtml;
 
   const createPost = rootElement.querySelector('.btn-submit');

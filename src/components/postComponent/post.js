@@ -11,12 +11,10 @@ export const updatelikePost = async (postId) => {
         firebase.firestore().collection('posts').doc(postId).update({
           likes: firebase.firestore.FieldValue.increment(1),
         });
-        // numberOfLikesElement.textContent = numberOfLikes + 1;
       } else {
         firebase.firestore().collection('posts').doc(postId).update({
           likes: firebase.firestore.FieldValue.increment(-1),
         });
-        // numberOfLikesElement.textContent = numberOfLikes - 1;
       }
     });
 };
@@ -67,7 +65,3 @@ export const showPosts = () => firebase.auth().onAuthStateChanged((user) => {
   }
   return null;
 });
-  /* firebase.firestore().collection('posts').doc(postId).update({
-  likes: firebase.firestore.FieldValue === 0 ? firebase.firestore.FieldValue.increment(1) :
-  firebase.firestore.FieldValue.increment(-1),
-  }); // if ternário */

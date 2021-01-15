@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 import { onNavigate } from '../utils/history.js';
 
 export const userProfile = (name) => {

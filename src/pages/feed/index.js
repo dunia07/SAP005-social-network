@@ -15,9 +15,12 @@ export const Feed = () => {
       <div class="posted-text"></div>
     </div> `;
   showPosts();
+
   rootElement.innerHTML = postHtml;
 
   const createPost = rootElement.querySelector('.btn-submit');
+  // const loadPosts = rootElement.querySelector('.load-posts');
+  const createPost = rootElement.querySelector('.form-post');
   createPost.addEventListener('click', (e) => {
     e.preventDefault();
     const txtPost = document.querySelector('.text-post').value;
@@ -47,10 +50,10 @@ export const Feed = () => {
         error('Error on load');
       });
   });
-
   const logOut = rootElement.querySelector('.btn-logout');
   logOut.addEventListener('click', () => {
     SignOut();
   });
   return rootElement;
 };
+

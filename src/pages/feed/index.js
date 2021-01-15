@@ -1,4 +1,4 @@
-import { SignOut } from '../../services/index.js';
+import { SignOut, DeletePost, IsCurrentUser } from '../../services/index.js';
 
 function renderPost(user) {
   const postDiv = document.querySelector('.posted-text');// div onde oS postS ficarão
@@ -25,6 +25,24 @@ function renderPost(user) {
       </ul>`;
       postDiv.innerHTML += postElement;
     });
+
+    
+      const postsButtons = postDiv.querySelector('.posts-buttons');
+      postsButtons.innerHTML = `
+        <button id="delete-button-${post.id}" class="delete-button">
+          Delete post
+        </button>
+      `;
+  
+      deleteButton.addEventListener('click', () => {
+        const popupToDelete = window.confirm('Are you sure you want to delete this post?');
+        if (popupToDelete) {
+          postContainer.querySelector(`[load-posts='${post.id}']`).remove();
+          DeletePost(post.id);
+        }
+      });
+  
+    
 }
 // FUNÇÃO QUE MANTÉM O ESTADO DE LOGADO
 const showPosts = () => firebase.auth().onAuthStateChanged((user) => {
@@ -47,14 +65,18 @@ export const Feed = () => {
   <button class="btn-singout" id="btn-singout" type="submit">SingOut</button>
   </form>
   <button class="btn-logout">LogOut</button>
-  <div class="load-posts" id="load-posts">
-  </div>
+  <div class="load-posts" id="load-posts"></div>
+  <div class="posts-buttons" id=""posts-buttons"></div>
   </div>
   `;
 
   showPosts();
 
   rootElement.innerHTML = postHtml;
+
+  
+
+
 
   // const loadPosts = rootElement.querySelector('.load-posts');
   const createPost = rootElement.querySelector('.form-post');
@@ -75,51 +97,11 @@ export const Feed = () => {
     }
     return null;
   });
+
   const logOut = rootElement.querySelector('.btn-logout');
   logOut.addEventListener('click', () => {
     SignOut();
   });
   return rootElement;
 };
-/*
-  //VERSÃO DANIEL
-  // function addPost(post) {
-  //   const templatePost = `
-  //     <li id="${post.id}">
-  //       ${post.data().text} ❤️ ${post.data().likes}
-  //     </li>
-  //   `
-  //   document.querySelector('.load-posts').innerHTML += templatePost;
-  // }
 
-  // function loadPosts() {
-  //   const collectionPosts = firebase.firestore().collection("posts")
-  //   document.querySelector('.load-posts').innerHTML = "Carregando..."
-  //   collectionPosts.get().then(snap => {
-  //     document.querySelector('.load-posts').innerHTML = " "
-  //     snap.forEach(post => {
-  //       addPost(data)
-  //     })
-  //   })
-  //   return loadPosts();
-  // }
-
-  //VERSÃO KARINA
-  function showPosts (data) {
-    const templatePosts = `
-      <div>
-      <p> ${data.post} </div>
-      </div>
-    `
-
-    loadPosts.innerHTML += templatePosts
-  }
-
-firebase.firestore().collection(posts)/*.orderBy("date", "desc").onSnapshot((snapshot) => {
-    snapshot.docChanges().forEach((post) => {
-      if (post.type ==="added") {
-        showPosts(post.doc.data.doc.id)
-      }
-    })
-  })
-  */

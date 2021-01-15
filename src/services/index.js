@@ -61,3 +61,16 @@ export const IsCurrentUser = (notLoggedPage) => firebase.auth().onAuthStateChang
     window.location.pathname = notLoggedPage;
   }
 });
+
+export const DeletePost = (postId) => {
+  firebase.firestore().collection('posts')
+    .doc(postId)
+    .delete()
+    .then(() => {
+      alert('Post deleted successfully.');
+    })
+    .catch(() => {
+      alert('Oops! Something went wrong. Please try again.');
+    });
+};
+

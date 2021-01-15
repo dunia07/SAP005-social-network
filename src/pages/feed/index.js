@@ -1,5 +1,6 @@
-import { SignOut } from '../../services/index.js';
 import { showPosts } from '../../components/PostComponent/post.js';
+import { onNavigate } from '../../utils/history.js';
+import { SignOut } from '../../services/index.js';
 
 export const Feed = () => {
   const rootElement = document.createElement('div');
@@ -13,15 +14,14 @@ export const Feed = () => {
       </form>
       <div class="posted-text"></div>
     </div> `;
-
   showPosts();
   rootElement.innerHTML = postHtml;
 
-  const createPost = rootElement.querySelector('.form-post');
+  const createPost = rootElement.querySelector('.btn-submit');
   createPost.addEventListener('click', (e) => {
     e.preventDefault();
-    const textPost = document.querySelector('.text-post').value;
-    const user = firebase.auth().currentUser; // IDENTIFICA USUÁRIO QUE ESTA LOGADO
+    const txtPost = document.querySelector('.text-post').value;
+    const user = firebase.auth().currentUser;
     const userName = user.displayName;
     const userId = user.uid;
     const photo = user.photoURL;
@@ -31,14 +31,21 @@ export const Feed = () => {
       user: userId,
       name: userName,
       image: photo,
-      text: textPost,
-      // time: Date.now(),
+      text: txtPost,
+      time: Date.now(),
       date: `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`,
       likes: 0,
       comments: [],
     };
+
     const collectionPosts = firebase.firestore().collection('posts');
-    collectionPosts.add(post);
+    collectionPosts.add(post)
+      .then(() => {
+        onNavigate('/feed');
+      })
+      .catch((error) => {
+        error('Error on load');
+      });
   });
 
   const logOut = rootElement.querySelector('.btn-logout');

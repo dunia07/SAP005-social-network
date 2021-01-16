@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 import { onNavigate } from '../utils/history.js';
 
-export const userProfile = (name) => {
+const userProfile = (name) => {
   firebase.auth().currentUser.updateProfile({
     displayName: name,
     photoURL: '',
@@ -14,7 +14,7 @@ export const userProfile = (name) => {
     });
 };
 
-export const saveProfile = (user, userEmail, userName) => {
+const saveProfile = (user, userEmail, userName) => {
   firebase
     .firestore()
     .collection('users')

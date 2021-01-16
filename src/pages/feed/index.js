@@ -1,12 +1,12 @@
+import { showPosts } from '../../components/postComponent/post.js';
 import { onNavigate } from '../../utils/history.js';
 import { SignOut } from '../../services/index.js';
-import { showPosts } from '../../components/postComponent/post.js';
 
 export const Feed = () => {
   const rootElement = document.createElement('div');
   const postHtml = `
     <div>
-      <h1 class="feed"> Feed!</h1>
+      <h1 class="feed">Account created successfully! Feed!</h1>
       <button class="btn-logout">LogOut</button>
       <form class="form-post" id="form-post">
         <input class="text-post" id="text-post" type="text">
@@ -19,7 +19,7 @@ export const Feed = () => {
   rootElement.innerHTML = postHtml;
 
   const createPost = rootElement.querySelector('.btn-submit');
-  // const loadPosts = rootElement.querySelector('.load-posts');
+
   createPost.addEventListener('click', (e) => {
     e.preventDefault();
     const txtPost = document.querySelector('.text-post').value;
@@ -55,3 +55,4 @@ export const Feed = () => {
   });
   return rootElement;
 };
+

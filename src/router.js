@@ -2,7 +2,7 @@
 import { Feed } from './pages/feed/index.js';
 import { Home } from './pages/home/index.js';
 import { Login } from './pages/login/index.js';
-import { SingUp } from './pages/singup/index.js';
+import { SignUp } from './pages/signup/index.js';
 import { IsCurrentUser } from './services/index.js';
 import { onNavigate } from './utils/history.js';
 
@@ -11,7 +11,7 @@ export const routeRender = () => {
   const routes = {
     '/': Home,
     '/login': Login,
-    '/singup': SingUp,
+    '/signup': SignUp,
     '/feed': Feed,
   };
 
@@ -35,15 +35,15 @@ export const routeRender = () => {
     });
   }
 
-  document.getElementById('singup').addEventListener('click', (e) => {
+  document.getElementById('signup').addEventListener('click', (e) => {
     e.preventDefault();
-    IsCurrentUser('/singup');
+    IsCurrentUser('/signup');
   });
 
-  if (document.getElementById('btn-singup') != null) {
-    document.getElementById('btn-singup').addEventListener('click', (e) => {
+  if (document.getElementById('btn-signup') != null) {
+    document.getElementById('btn-signup').addEventListener('click', (e) => {
       e.preventDefault();
-      IsCurrentUser('/singup');
+      IsCurrentUser('/signup');
     });
   }
 };

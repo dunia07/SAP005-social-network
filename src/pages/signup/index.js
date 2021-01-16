@@ -1,12 +1,12 @@
 /* eslint-disable no-alert */
 import { CreateUser } from '../../services/index.js';
 
-export const SingUp = () => {
+export const SignUp = () => {
   const rootElement = document.createElement('div');
   const formHtml = `
     <div>  
-      <h1 class="singup">Sing up!</h1>
-      <form class="singup-form" id="singup-form">
+      <h1 class="signup">Sign up!</h1>
+      <form class="signup-form" id="signup-form">
         <figure class="profile-img">
           <span class="material-icons">account_circle</span>
           <input type='file' class="file-profile" accept="image/png, image/jpeg">
@@ -20,8 +20,8 @@ export const SingUp = () => {
     </div>`;
   rootElement.innerHTML = formHtml;
 
-  const singupForm = rootElement.querySelector('.btn-create');
-  singupForm.addEventListener('click', (e) => {
+  const signupForm = rootElement.querySelector('.btn-create');
+  signupForm.addEventListener('click', (e) => {
     e.preventDefault();
     const nameElement = document.querySelector('.name').value;
     const emailElement = document.querySelector('.email').value;

@@ -1,4 +1,4 @@
-import { showPosts } from '../../components/PostComponent/post.js';
+import { showPosts } from '../../components/postComponent/post.js';
 import { onNavigate } from '../../utils/history.js';
 import { SignOut } from '../../services/index.js';
 
@@ -19,8 +19,7 @@ export const Feed = () => {
   rootElement.innerHTML = postHtml;
 
   const createPost = rootElement.querySelector('.btn-submit');
-  // const loadPosts = rootElement.querySelector('.load-posts');
-  const createPost = rootElement.querySelector('.btn-submit');
+
   createPost.addEventListener('click', (e) => {
     e.preventDefault();
     const txtPost = document.querySelector('.text-post').value;

@@ -1,7 +1,7 @@
 export const Home = () => {
   // Coloque sua página
   const rootElement = document.createElement('div');
-  const singupHtml = `
+  const signupHtml = `
     <main>
       <section class="container-home">
         <h1>Welcome!</h1>
@@ -10,10 +10,10 @@ export const Home = () => {
 
         <section class="btn-container">
           <button class="btn-login" id="btn-login">Login</button> 
-          <button class="btn-signup" id="btn-singup">SignUp</button>
+          <button class="btn-signup" id="btn-signup">SignUp</button>
         </section> 
       </section>
     </main>`;
-  rootElement.innerHTML = singupHtml;
+  rootElement.innerHTML = signupHtml;
   return rootElement;
 };

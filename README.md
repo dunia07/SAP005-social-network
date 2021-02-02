@@ -12,7 +12,7 @@
 
 * [5. Prototipação](#5-prototipacao)
 
-* [6. Engenharia semiótica (signos)](#6-engenharia-semiotica-(signos))
+* [6. Engenharia semiótica (signos)](#6-engenharia-semiotica-signos)
 
 * [7. Ferramentas utilizadas](#7-ferramentas-utilizadas)
 

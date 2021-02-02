@@ -8,15 +8,15 @@
 
 * [3. Pesquisa](#3-pesquisa)
 
-* [4. Persona e história de usuário](#4-persona-e-historia-de-usuario)
+* [4. Persona e história de usuário](#4-persona-e-história-de-usuário)
 
-* [5. Prototipação](#5-prototipacao)
+* [5. Prototipação](#5-prototipação)
 
-* [6. Engenharia semiótica (signos)](#6-engenharia-semiotica-signos)
+* [6. Engenharia semiótica (signos)](#6-engenharia-semiótica-signos)
 
 * [7. Ferramentas utilizadas](#7-ferramentas-utilizadas)
 
-* [8. Considerações finais](#8-consideracoes-finais)
+* [8. Considerações finais](#8-considerações-finais)
 
 * [9. Autores](#9-autores)
 

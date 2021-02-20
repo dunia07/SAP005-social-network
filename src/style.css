@@ -33,7 +33,7 @@ body {
   top: 50%;
   left: 90%;
   transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%)
+  -ms-transform: translate(-50%, -50%);
 }
 
 #checkbox-menu {
@@ -41,9 +41,9 @@ body {
 }
 
 #icone {
+  position: fixed;
   cursor: pointer;
   padding: 20px;
-  position: fixed;
   z-index: 1;
 
   top: 20px;
@@ -481,6 +481,7 @@ input:checked~label .hamburguer:after {
     bottom: 0;
   }
 }
+
 @media screen and (max-width: 660px) {
   * {
     margin: 0;

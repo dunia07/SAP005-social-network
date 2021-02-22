@@ -11,8 +11,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
+} 
 .menu {
   background: #F2E569;
   position: absolute;
@@ -138,10 +137,6 @@ nav a {
 
 .hamburguer:after {
   bottom: -10px;
-}
-
-input {
-  display: none;
 }
 
 input:checked~label .hamburguer {
@@ -295,14 +290,10 @@ input:checked~label .hamburguer:after {
   
   .hamburguer:before {
     top: -10px;
-  }
+  }r
   
   .hamburguer:after {
     bottom: -10px;
-  }
-  
-  input {
-    display: none;
   }
   
   input:checked~label .hamburguer {
@@ -463,10 +454,6 @@ input:checked~label .hamburguer:after {
     bottom: -10px;
   }
   
-  input {
-    display: none;
-  }
-  
   input:checked~label .hamburguer {
     transform: rotate(45deg);
   }
@@ -624,11 +611,7 @@ input:checked~label .hamburguer:after {
   .hamburguer:after {
     bottom: -10px;
   }
-  
-  input {
-    display: none;
-  }
-  
+
   input:checked~label .hamburguer {
     transform: rotate(45deg);
   }

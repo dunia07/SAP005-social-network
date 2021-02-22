@@ -28,7 +28,6 @@ main {
   padding-top: 15%;
   padding-left: 62%;
   padding-right: 5%;
-  position: relative;
   font-family: "Roboto Slab" serif;
   font-weight: bold;
   font-size: 60px;
@@ -88,35 +87,6 @@ main {
   color: #6B5B22;
 }
 
-.login:hover {
-  margin-left: 55%;
-  padding: 15px;
-  width: 20%;
-
-  border: 3px solid #FAC304;
-  background-color: #FAC304;
-  border-radius: 10px;
-  
-  font-size: 18px;
-  font-weight: bold;
-  color: #6B5B22;
-}
-
-.signup:hover {
-  margin-left: 15px;
-  padding: 15px;
-  width: 20%;
-
-  border: 3px solid #FAC304;
-  background-color: #FFFFFF;
-  border-radius: 10px;
-  
-  font-size: 18px;
-  font-weight: bold;
-  color: #6B5B22;
-  
-}
-
 @media screen and (max-width: 660px) {
   * {
     margin: 0;
@@ -146,7 +116,6 @@ main {
   }
 
   .welcome-home h1 {
-    padding: 0;
     padding: 0;
     font-family: "Roboto Slab" serif;
     font-weight: bold;
@@ -226,8 +195,6 @@ main {
 
   .welcome-home h1 {
     padding: 15px;
-    margin-left: 8%;
-
     font-family: "Roboto Slab" serif;
     font-weight: bold;
     font-size: 40px;

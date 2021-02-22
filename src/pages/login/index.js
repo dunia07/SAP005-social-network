@@ -4,14 +4,17 @@ import { SingIn, SingInGoogle } from '../../services/index.js';
 
 export const Login = () => {
   const rootElement = document.createElement('div');
+  rootElement.classList.add('page-login');
   const formHtml = `
+    <img src="images/welcome.png" alt="Welcome to BeeU">
+    <h1>Login to your account!</h1>
     <div class="container-form">
-      <h1>Login!</h1>
       <form class="login-form">
         <input class="email-login" type="email" placeholder="E-mail" required>
         <input class="psw-login" type="password" placeholder="Password" required>
-        <button class="btn-login" >Login</button>
-        <button class="btn-google" >Login with Google</button>
+        <button class="btn-login">Login</button>
+        <p>Or<p/>
+        <button class="btn-google">Login with Google</button>
       </form>
     </div> `;
   rootElement.innerHTML = formHtml;

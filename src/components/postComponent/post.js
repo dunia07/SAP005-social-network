@@ -18,15 +18,22 @@ export const updatelikePost = async (postId) => {
         // numberOfLikesElement.textContent = numberOfLikes - 1;
       }
     });
+    
 };
+
+export const deletePost = (postId) => firebase.firestore().collection('posts').doc(postId).delete();
+
+
 export const addLikeListener = (post) => {
   const postId = document.getElementById(post.id);
   // eslint-disable-next-line no-unused-vars
   postId.addEventListener('click', (e) => {
+    e.preventDefault;
     updatelikePost(post.id);
     onNavigate('/feed');
   });
-};
+}
+
 function renderPost(user) {
   const postContainer = document.querySelector('.posted-text');
   firebase.firestore().collection('posts').where('user', '==', user.uid).get()
@@ -44,10 +51,19 @@ function renderPost(user) {
             <div class="buttons-social">
               <a id='likes-counter-${post.id}'>${database.likes}</a> 
               <button id='${post.id}' class='btn-like'><i>👍</i></button>
-              <button class='btn-coment'><i>💬</button>
+              <button class='button-delete' data-delete='${post.postId}'><i>🗑️</button>
             </div>
             <input class="comment" placeholder="Comment" type="text">
             `;
+            postElement.querySelector('.button-delete').addEventListener('click', (e) => {
+              e.preventDefault();
+              const confirmDelete = window.confirm('Deseja deletar o post?');
+              if (confirmDelete === true) {
+                deletePost(post.postId);
+                postElement.remove('.post-individual');
+              }
+            });
+            
         postContainer.append(postElement);
         addLikeListener(post);
       });
@@ -66,3 +82,4 @@ export const showPosts = () => firebase.auth().onAuthStateChanged((user) => {
   }
   return null;
 });
+

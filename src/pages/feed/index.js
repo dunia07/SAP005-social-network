@@ -6,13 +6,14 @@ export const Feed = () => {
   const rootElement = document.createElement('div');
   const postHtml = `
     <div>
-      <h1 class="feed">Account created successfully! Feed!</h1>
-      <button class="btn-logout">LogOut</button>
+    <button>teste</button>
+      <h1 class="feed"></h1>
       <form class="form-post" id="form-post">
         <input class="text-post" id="text-post" type="text">
         <button class="btn-submit" id="btn-submit" type="submit">Submit</button>
       </form>
       <div class="posted-text"></div>
+      <button class="btn-logout">LogOut</button>
     </div> `;
   showPosts();
 

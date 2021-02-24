@@ -21,8 +21,18 @@ export const updatelikePost = async (postId) => {
     
 };
 
-export const deletePost = (postId) => firebase.firestore().collection('posts').doc(postId).delete();
+export const deletePost = (postId) => {
+  firebase.firestore()
+  .collection('posts')
+  .doc(postId)
+  .delete();
+}
 
+export const updateTextPost = (postId, newText) => {
+    firebase.firestore().collection('posts').doc(postId).update({
+      text: newText
+    });
+}
 
 export const addLikeListener = (post) => {
   const postId = document.getElementById(post.id);
@@ -34,6 +44,27 @@ export const addLikeListener = (post) => {
   });
 }
 
+export const addUpdateTextListener = (post, postElement) => {
+  postElement.querySelector('.button-update-' + post.id).addEventListener('click', (e) => {
+    e.preventDefault();
+    const updateText = document.getElementById('update-text-' + post.id).value;
+    console.log(updateText);
+    updateTextPost(post.id, updateText);
+    onNavigate('/feed');
+  });
+}
+
+export const addDeleteListener = (post, postElement) => {
+  postElement.querySelector('.button-delete-' + post.id).addEventListener('click', (e) => {
+    e.preventDefault();
+    const confirmDelete = window.confirm('Deseja deletar o post?');
+    if (confirmDelete === true) {
+      deletePost(post.id);
+      postElement.remove('.post-individual');
+    }
+  });
+}
+
 function renderPost(user) {
   const postContainer = document.querySelector('.posted-text');
   firebase.firestore().collection('posts').where('user', '==', user.uid).get()
@@ -41,6 +72,7 @@ function renderPost(user) {
       querySnapshot.forEach((post) => {
         const database = post.data();
         const postElement = document.createElement('div');
+        postElement.classList.add('post-individual');
         postElement.innerHTML = `
             <li class="name-profile">${database.name}</li>
             <li class="date-post">${database.date} ${database.time}</li>
@@ -50,22 +82,25 @@ function renderPost(user) {
             
             <div class="buttons-social">
               <a id='likes-counter-${post.id}'>${database.likes}</a> 
-              <button id='${post.id}' class='btn-like'><i>👍</i></button>
-              <button class='button-delete' data-delete='${post.postId}'><i>🗑️</button>
-            </div>
+              <button id='${post.id}' class='btn-like'><i>💛</i></button>
+              <button class='button-delete-${post.id}' data-delete='${post.id}'><i>🗑️</button>
+            <div>
+              <div id="modal-promocao" class="modal-container> 
+                <div class="modal">
+                  <form>
+                    <input id="update-text-${post.id}" placeholder="Edit your post here" type="text">
+                    <button id="button-edit"class='button-update-${post.id}' <i>✓</button>
+                  </form>
+                </div>
+              </div>
+              </div>
             <input class="comment" placeholder="Comment" type="text">
             `;
-            postElement.querySelector('.button-delete').addEventListener('click', (e) => {
-              e.preventDefault();
-              const confirmDelete = window.confirm('Deseja deletar o post?');
-              if (confirmDelete === true) {
-                deletePost(post.postId);
-                postElement.remove('.post-individual');
-              }
-            });
             
         postContainer.append(postElement);
         addLikeListener(post);
+        addDeleteListener(post, postElement);
+        addUpdateTextListener(post, postElement);
       });
     })
     .catch(() => {

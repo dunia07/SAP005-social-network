@@ -10,7 +10,7 @@ export const Feed = () => {
       <h1 class="feed"></h1>      
       <button class="btn-logout">LogOut</button>
       <form class="form-post" id="form-post">
-        <input class="text-post" id="text-post" type="text">
+        <input class="text-post" id="text-post" placeholder="Tell us something" type="text">
         <button class="btn-submit" id="btn-submit" type="submit">Submit</button>
       </form>
       <div class="posted-text"></div>

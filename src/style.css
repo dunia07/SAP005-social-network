@@ -11,6 +11,10 @@ body {
   margin: 0;
   padding: 0;
 } 
+#checkbox-menu:checked ~ .menu-bar nav a .path {
+  opacity: 1;
+  transition-delay: .3s;
+}
 .profile-items {
   width: 267px;
   background: #F2E569;
@@ -47,6 +51,7 @@ body {
   margin-top: 5px;
 
 }
+
 
 #button-edit{
   border: none;
@@ -200,7 +205,14 @@ nav a {
 
 #checkbox-menu:checked~.menu-bar {
   transform: translateX(250px);
+  background-color: #F2E569;
+  height: 100%;
+  width: 20%;
+  position: absolute;
+  transition: all .2s linear;
+  left: -270px;
 }
+
 
 #checkbox-menu:checked~.menu-bar nav a .path {
   opacity: 1;
@@ -213,7 +225,7 @@ nav a {
   height: 60px;
   position: fixed;
   top: 25px;
-  left: 25px;
+  margin-left: 25px;
 }
 
 .hamburguer {
@@ -261,9 +273,13 @@ input:checked~label .hamburguer:before {
 }
 
 .btn-like{
-  border:none;
+  border: none;
   margin-left: 50px;
+  margin-top: 10px;
+  outline: none;
+  box-shadow: none;
 }
+
 
 .likes-counters{
   margin-left: 10px;
@@ -287,7 +303,7 @@ input:checked~label .hamburguer:after {
   /* height: 90px; */
   margin-top: -102px;
   margin-bottom: -4px;
-  height: 90px;
+  height: 95px;
 }
 @media screen and (max-width: 1200px) {
   * {
@@ -346,6 +362,9 @@ input:checked~label .hamburguer:after {
     font-size: 24px;
     color: #6B5B22;
     border: none;
+  }
+  .profile-pic {
+    padding-top: 5px;
   }
   
   .menu-bar {
@@ -457,6 +476,8 @@ input:checked~label .hamburguer:after {
     margin-bottom: -4px;
     padding-left: 45px;
     height: 130px;
+    border: 3px solid #FAC304;
+    border-radius: 0px 0px 4px 4px;
 }
   .buttons-social {
       width: auto;
@@ -531,6 +552,10 @@ input:checked~label .hamburguer:after {
   
     display: inline-flex;
     justify-content: space-between;
+  }
+  
+  .profile-pic {
+    padding-top: 4px;
   }
   
   #logo {

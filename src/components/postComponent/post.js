@@ -116,7 +116,7 @@ function renderPost(user) {
             <div class="vertical-infos-post">
             <div class="buttons-social">
               <a class="likes-counters" id='likes-counter-${post.id}'>${database.likes}</a> 
-              <button id='${post.id}' class='btn-like'>💛</button>
+              <button id='${post.id}' class='btn-like'>🖤</button>
               <button id="button-delete"class='button-delete-${post.id}' data-delete='${post.id}'>🗑️</button>
             <div>
               <div id="modal-promocao" class="modal-container> 

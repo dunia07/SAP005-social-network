@@ -1,25 +1,40 @@
 import { onNavigate } from '../../utils/history.js';
 
-export const updatelikePost = async (postId) => {
-  const numberOfLikesElement = document.querySelector(`#likes-counter-${postId}`);
-  // eslint-disable-next-line no-unused-vars
-  const numberOfLikes = Number(numberOfLikesElement.textContent);
-  await firebase.firestore().collection('posts').doc(postId).get()
-    .then((doc) => {
-      if (doc.data().likes === 0) {
-        firebase.firestore().collection('posts').doc(postId).update({
-          likes: firebase.firestore.FieldValue.increment(1),
-        });
-        // numberOfLikesElement.textContent = numberOfLikes + 1;
-      } else {
-        firebase.firestore().collection('posts').doc(postId).update({
-          likes: firebase.firestore.FieldValue.increment(-1),
-        });
-        // numberOfLikesElement.textContent = numberOfLikes - 1;
-      }
+var clicked = false;
+
+export const updatelikePost = async (postId, postElement) => {
+  if(!clicked){
+    clicked = true;
+    const numberOfLikesElement = postElement.querySelector(`#likes-counter-${postId}`);
+    const numberOfLikes = Number(numberOfLikesElement.textContent);
+    await firebase.firestore().collection('posts').doc(postId).get()
+      .then((doc) => {
+        if (doc.data().likes === 0) {
+          firebase.firestore().collection('posts').doc(postId).update({ 
+            likes: firebase.firestore.FieldValue.increment(1),
+          });
+          numberOfLikesElement.textContent = numberOfLikes + 1;
+        } else {
+          firebase.firestore().collection('posts').doc(postId).update({
+            likes: firebase.firestore.FieldValue.increment(-1),
+          });
+          numberOfLikesElement.textContent = numberOfLikes - 1;
+        }
     });
     
+    setTimeout(function(){
+      clicked = false;
+    }, 1000);
+  }
 };
+
+export const addLikeListener = (post, postElement) => {
+  const postId = document.getElementById(post.id);
+  postId.addEventListener('click', (e) => {
+    e.preventDefault;
+    updatelikePost(post.id, postElement);
+  });
+}
 
 export const deletePost = (postId) => {
   firebase.firestore()
@@ -32,16 +47,6 @@ export const updateTextPost = (postId, newText) => {
     firebase.firestore().collection('posts').doc(postId).update({
       text: newText
     });
-}
-
-export const addLikeListener = (post) => {
-  const postId = document.getElementById(post.id);
-  // eslint-disable-next-line no-unused-vars
-  postId.addEventListener('click', (e) => {
-    e.preventDefault;
-    updatelikePost(post.id);
-    onNavigate('/feed');
-  });
 }
 
 export const addUpdateTextListener = (post, postElement) => {
@@ -61,44 +66,71 @@ export const addDeleteListener = (post, postElement) => {
     if (confirmDelete === true) {
       deletePost(post.id);
       postElement.remove('.post-individual');
+      onNavigate('/feed');
     }
   });
 }
 
+export const updateComments = (id, subComment) => {
+  return firebase
+    .firestore()
+    .collection('post')
+    .doc(id)
+    .update({ comments: firebase.firestore.FieldValue.arrayUnion(subComment) });
+};
+
+function compare(a, b) {
+  if (a.time < b.time) {
+    return -1;
+  }
+  if (a.time > b.time) {
+    return 1;
+  }
+  // a must be equal to b
+  return 0;
+}
+
+
 function renderPost(user) {
   const postContainer = document.querySelector('.posted-text');
-  firebase.firestore().collection('posts').where('user', '==', user.uid).get()
+  firebase.firestore().collection('posts')
+  .where('user', '==', user.uid)
+  .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((post) => {
+
         const database = post.data();
         const postElement = document.createElement('div');
         postElement.classList.add('post-individual');
+        var data = new Date(database.time)
         postElement.innerHTML = `
-            <li class="name-profile">${database.name}</li>
-            <li class="date-post">${database.date} ${database.time}</li>
-            <li class="post-posted">${database.text}</li>
+        <div class="profile-items">
+          <div class="up-profile">  
             <img class="profile-pic" src=${database.image} alt="Image">
+            <li class="name-profile">${database.name}</li>
+          </div>
+          <div class='date-posts'>
+            <li class="post-posted">${database.text}</li>
+            <li class="date-post">${data}</li>
+            </div>
             <div class="vertical-infos-post">
-            
             <div class="buttons-social">
-              <a id='likes-counter-${post.id}'>${database.likes}</a> 
-              <button id='${post.id}' class='btn-like'><i>💛</i></button>
-              <button class='button-delete-${post.id}' data-delete='${post.id}'><i>🗑️</button>
+              <a class="likes-counters" id='likes-counter-${post.id}'>${database.likes}</a> 
+              <button id='${post.id}' class='btn-like'>💛</button>
+              <button id="button-delete"class='button-delete-${post.id}' data-delete='${post.id}'>🗑️</button>
             <div>
               <div id="modal-promocao" class="modal-container> 
                 <div class="modal">
-                  <form>
-                    <input id="update-text-${post.id}" placeholder="Edit your post here" type="text">
+                  <form class="update-edit-post">
+                    <input class="update-texts"id="update-text-${post.id}" placeholder="Edit your post here" type="text">
                     <button id="button-edit"class='button-update-${post.id}' <i>✓</button>
                   </form>
-                </div>
               </div>
               </div>
-            <input class="comment" placeholder="Comment" type="text">
             `;
             
         postContainer.append(postElement);
-        addLikeListener(post);
+        addLikeListener(post, postElement);
         addDeleteListener(post, postElement);
         addUpdateTextListener(post, postElement);
       });

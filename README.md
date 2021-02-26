@@ -33,7 +33,7 @@ O tema escolhido foi o universo da beleza/estética. Com foco em valorização d
 Foram realizadas pesquisas através de formulários para conhecer melhor nossos possíveis usuários.
 
 Clique [**Aqui**](https://sap005-social-network.firebaseapp.com/), para acessar a aplicação 
-
+![paginaweb](gift-utilizacao3.gif)
 ## 3. Pesquisa
 
 De ínicio, quisemos entender melhor qual seria a relação dos usuários com a sua própria aparência:

@@ -32,7 +32,7 @@ O tema escolhido foi o universo da beleza/estética. Com foco em valorização d
 
 Foram realizadas pesquisas através de formulários para conhecer melhor nossos possíveis usuários.
 
-Cliquei ![aqui](https://sap005-social-network.firebaseapp.com/feed) para acessar a aplicação.
+Cliquei ![aqui](https://sap005-social-network.firebaseapp.com/) 
 
 ## 3. Pesquisa
 

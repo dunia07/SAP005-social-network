@@ -98,7 +98,6 @@ No **BeeU** :honeybee:, a simbologia da abelha retrata o companheirismo, comunid
  Este projeto foi realizado utilizando as ferramentas abaixo:
   * Vs Code;
   * Google Forms;
-  * HubSpot;
   * Adobe Color;
   * Canva;
   * Figma;

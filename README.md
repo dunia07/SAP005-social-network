@@ -1,5 +1,12 @@
 # BeeU ![imagem](images-readme/beeu-logo-removebg-min.png)
 
+Acesse a aplicação aqui: https://sap005-social-network.web.app/
+
+### Usuários para teste :mag_right:
+
+`teste@beeu.com.br /
+Senha: teste123456`
+
 ## Índice 
 
 * [1. Descrição](#1-descrição)

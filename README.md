@@ -1,5 +1,12 @@
 # BeeU ![imagem](images-readme/beeu-logo-removebg-min.png)
 
+Acesse a aplicação aqui: https://sap005-social-network.web.app/
+
+### Usuários para teste :mag_right:
+
+`teste@beeu.com.br /
+Senha: teste123456`
+
 ## Índice 
 
 * [1. Descrição](#1-descrição)
@@ -32,6 +39,8 @@ O tema escolhido foi o universo da beleza/estética. Com foco em valorização d
 
 Foram realizadas pesquisas através de formulários para conhecer melhor nossos possíveis usuários.
 
+
+![paginaweb](gift-utilizacao3.gif)
 ## 3. Pesquisa
 
 De ínicio, quisemos entender melhor qual seria a relação dos usuários com a sua própria aparência:
@@ -96,7 +105,6 @@ No **BeeU** :honeybee:, a simbologia da abelha retrata o companheirismo, comunid
  Este projeto foi realizado utilizando as ferramentas abaixo:
   * Vs Code;
   * Google Forms;
-  * HubSpot;
   * Adobe Color;
   * Canva;
   * Figma;

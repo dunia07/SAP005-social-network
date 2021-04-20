@@ -1,70 +1,311 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-html,
-body { 
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-} 
-#checkbox-menu:checked ~ .menu-bar nav a .path {
-  opacity: 1;
-  transition-delay: .3s;
-}
-.profile-items {
-  width: 267px;
-  background: #F2E569;
-  margin-left: 3px;
-  list-style:none
-}
-.post-posted{
-  background:white;
-}
-.date-post{
-  background: white;
-  font-size: 10px;
-}
-.date-posts{
-  border: 3px solid #FAC303;
-  margin-left: -3px;
-  width: 270px;
-  height: 100px;
-  background: white;
-  margin-bottom: -5px;
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-}
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #FFFDD0;
+    }
 
+    .profile-items {
+      width: 267px;
+      list-style: none
+    }
 
-.update-edit-post{
-  justify-content: space-around;
-}
-.update-texts{
-  background: #FFFFFF;
-  border: 3px solid #FAC304;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-  border-radius: 4px;
-  height: 50px;
-  margin-top: 5px;
+    .profile-pic {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-left: 8vw;
+    }
 
-}
+    .post-posted {
+      padding: 10px;
+      background: white;
+    }
 
+    .date-post {
+      font-size: 10px;
+      padding-left: 10px;
+    }
 
-#button-edit{
-  border: none;
-}
+    .date-posts {
+      border-radius: 5px;
+      border: 3px solid #FAC303;
+      margin: 10px;
+      width: 60vw;
+      height: 20vh;
 
-/* .up-profile{
-    margin-left: '1px';
-    border: 3px solid #FAC303;
-    margin-left: -3px;
-    padding-top: 9px;
-    margin-top: -102px;
-    margin-bottom: -4px;
-} */
+      background: white;
+      margin-top: -22vh;
+      margin-left: 19.5vw;
+      margin-bottom: 12vh;
+    }
+
+    .update-edit-post {
+      justify-content: space-around;
+    }
+
+    .update-texts {
+      background: #FFFFFF;
+      border: none;
+      border-radius: 4px;
+      width: 120vw;
+      height: 10vh;
+      margin-top: 5px;
+      padding: 5px;
+    }
+
+    .form-post {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 20px
+    }
+
+    #button-edit {
+      border: none;
+      background: #FFFFFF;
+    }
+
+    .done-icon{
+      width: 20px;
+      height: 20px;
+      margin-left: -10px;
+      background-color: #FFFFFF;
+    }
+
+    .up-profile {
+      margin-top: -10vh;
+      width: 100%;
+      height: 100%;
+    }
+
+    .name-profile {
+      font-family: Roboto;
+      font-style: normal;
+      font-size: 14px;
+      margin-left: 8vw;
+      color: #6B5B22;
+    }
+
+    .btn-submit {
+      width: 80px;
+      height: 30px;
+      background: #FAC304;
+      border: none;
+      color: #6B5B22;
+      font-weight: bolder;
+      border-radius: 3px;
+      margin-top: 14px;
+      margin-left: 60vw;
+      margin-right: 10vw;
+    }
+
+    .post-individual {
+      margin-top: 120px;
+    }
+
+    .posted-text {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-logout {
+      border: none;
+      width: 40px;
+      height: 40px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      background-color: #FFFDD0;
+      padding-left: 80vw;
+      font-size: 10px;
+      line-height: 12px;
+      text-align: center;
+      margin-top: 3%;
+      color: #000000;
+    }
+
+    .icon-logout{
+      font-size: 24px;
+    }
+
+    .text-post {
+      width: 60vw;
+      height: 20vh;
+      font-size: 14px;
+      padding: 8px;
+      font-weight: lighter;
+      color: #6B5B22;
+      background: #FFFFFF;
+      border: 3px solid #FAC304;
+      border-radius: 4px;
+      font-family: 'Rotobo' sans-serif;
+    }
+
+    .menu {
+      background: #F2E569;
+      position: fixed;
+      width: 100%;
+      height: 12%;
+      top: 0;
+      left: 0;
+      display: inline-flex;
+      justify-content: space-between;
+    }
+
+    #logo {
+      position: absolute;
+      width: 4%;
+      top: 50%;
+      left: 90%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+
+    #checkbox-menu {
+      display: none;
+    }
+
+    #icone {
+      position: fixed;
+      cursor: pointer;
+      padding: 20px;
+      z-index: 1;
+      top: 20px;
+      left: 20px;
+    }
+
+    .beeu {
+      font-family: 'Roboto Slab', serif;
+      font-size: 30px;
+      color: #6B5B22;
+      margin-top: -15px;
+    }
+
+    .menu-bar {
+      position: absolute;
+      background-color: #F2E569;
+      height: 313%;
+      width: 12%;
+      position: absolute;
+      transition: all .2s linear;
+      left: -270px;
+    }
+
+    nav {
+      width: 100%;
+      padding: 30px;
+      position: absolute;
+      top: 80px;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    .path {
+      background-color: #F2E569;
+      padding: 20px;
+      font-size: 12pt;
+      transition: all .3s linear;
+      color: #6B5B22;
+      border-bottom: 1px solid #F2E569;
+      opacity: 0;
+    }
+
+    .path:hover {
+      background-color: #FAC304;
+      color: #6B5B22;
+    }
+
+    #checkbox-menu:checked~.menu-bar {
+      transform: translateX(250px);
+    }
+
+    #checkbox-menu:checked~.menu-bar nav a .path {
+      opacity: 1;
+      transition-delay: .3s;
+    }
+
+    .mburg {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      position: fixed;
+      top: 25px;
+      left: 25px;
+    }
+
+    .hamburguer {
+      position: relative;
+      display: block;
+      background: #6B5B22;
+      width: 30px;
+      height: 3px;
+      top: 15px;
+      left: 2px;
+      transition: .5s ease-in-out;
+    }
+
+    .hamburguer:before, .hamburguer:after {
+      background: #6B5B22;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: .5s ease-in-out;
+    }
+
+    .hamburguer:before {
+      top: -10px;
+    }
+
+    .hamburguer:after {
+      bottom: -10px;
+    }
+
+    input:checked~label .hamburguer {
+      transform: rotate(45deg);
+    }
+
+    input:checked~label .hamburguer:before {
+      transform: rotate(90deg);
+      top: 0;
+    }
+
+    #button-delete{
+      border: none;
+      background-color: #F2E569;
+    }
+
+    .delete-icon {
+      border: none;
+      width: 15px;
+      height: 15px;
+      background-color: #F2E569;
+    } 
+
+    .btn-like {
+      border: none;
+      background-color: #F2E569;
+    }
+
+    .favorite-icon{
+      width: 15px;
+      height: 15px;
+      font-size: 10px;
+    }
+
 .up-profile {
   margin-top: -102px;
   margin-bottom: -4px;
@@ -169,13 +410,6 @@ border-radius: 4px;
   left: -270px;
 
 }
-/* 
-.profile-pic{
-  border: 3px solid #FAC304;
-  border-radius: 0px 0px 4px 4px;
-  width: 10px;
-  height: 10px;
-} */
 
 nav {
   width: 100%;
@@ -305,6 +539,7 @@ input:checked~label .hamburguer:after {
   margin-bottom: -4px;
   height: 95px;
 }
+
 @media screen and (max-width: 1200px) {
   * {
     margin: 0;
@@ -465,11 +700,6 @@ input:checked~label .hamburguer:after {
     bottom: 0;
   }
 }
-/* .up-profile {
-  margin-top: -102px;
-  margin-bottom: -4px;
-  padding-left: 45px;
-  } */
 
   .up-profile {
     margin-top: -102px;
@@ -483,6 +713,7 @@ input:checked~label .hamburguer:after {
       width: auto;
       margin-top: -78px;
   }
+
   .delete-posts{
   margin-left: 200px;
   width: auto;
@@ -500,22 +731,19 @@ input:checked~label .hamburguer:after {
   .update-texts {
       width: 200px;
       margin-left: 10px;
-  }
-  #button-edit {
+    } */
 
+
+    .feed {
+      padding-top: 50px;
+      padding-bottom: 10px;
       margin-left: -20px;
   }
+
   .likes-counters {
       margin-left: 10px;
       margin-top: 100px;
-  }
-  /* .date-posts {
-    margin-left: 190px;
-    width: auto;
-    margin-bottom: 90px;
-    margin-top: -120px;
-  margin-right: 15px;
-} */
+
 .date-posts {
   margin-left: 190px;
   width: auto;
@@ -685,273 +913,561 @@ input:checked~label .hamburguer:after {
     transform: rotate(90deg);
     bottom: 0;
   }
+  
   .up-profile {
     margin-top: -102px;
     margin-bottom: -4px;
     padding-left: 45px;
     border: 3px solid #FAC304;
     border-radius: 0px 0px 4px 4px;
-
-    }
-    /* .buttons-social {
-        width: auto;
-        margin-top: -73px; 
-    } */
-    up-profile {
-      margin-top: -102px;
-      margin-bottom: -4px;
-      padding-left: 45px;
-      height: 130px;
-  }
-    .delete-posts{
-    margin-left: 200px;
-    width: auto;
-    height: 137px;
-    margin-bottom: 10px;
-    font-family: Roboto;
-    font-style: normal;
-    font-size: 11px;
-    color: #6B5B22;
-    margin-top: -137px;
-    }
-    .profile-items {
-        width: auto;
-    }
-    .update-texts {
-        width: 200px;
-        margin-left: 10px;
-    }
-    #button-edit {
-        margin-left: -20px;
-    }
-    .likes-counters {
-        margin-left: 10px;
-        margin-top: 10px;
-    }
-    /* .date-posts {
-      margin-left: 190px;
-      width: auto;
-      margin-bottom: 90px;
-      margin-top: -115px;
-    margin-right: 15px;
-    } */
-    .date-posts {
-      margin-left: 190px;
-      width: auto;
-      margin-bottom: 90px;
-      margin-top: -115px;
-      margin-right: 15px;
-  }
-  
-}
-
-@media screen and (max-width: 660px) {
-  * {
-    margin: 0;
-    padding: 0;
-  
-    box-sizing: border-box;
-    font-family: 'Roboto' sans-serif;
-  }
-  
-  html,
-  body { 
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menu {
-    background: #F2E569;
-    width: 100%;
-    height: 8%;
-    position: fixed;
-    top: 0;
-    left: 0;
-  
-    display: inline-flex;
-    justify-content: space-between;
-  }
-  
-  #logo {
-    position: absolute;
-    display: none;
-    width: 4%;
-    top: 50%;
-    left: 89%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%)
-  }
-  
-  #checkbox-menu {
-    display: none;
-  }
-  
-  #icone {
-    position: fixed;
-    cursor: pointer;
-    padding: 20px;
-    
-    top: 20px;
-    left: 20px;
-    z-index: 1;
-  }
-  
-  .beeu{
-    font-family: 'Roboto Slab';
-    font-size: 24px;
-    color: #6B5B22;
-    border: none;
-  }
-  
-  .menu-bar {
-    background-color: #F2E569;
-    height: 100%;
-    width: 34%;
-    position: absolute;
-    transition: all .2s linear;
-    left: -270px;
-  }
-  
-  nav {
-    width: 100%;
-    padding: 30px;
-    position: absolute;
-    top: 80px;
-  }
-  
-  nav a {
-    text-decoration: none;
-  }
-  
-  .path {
-    background-color: #F2E569;
-    padding: 20px;
-    font-size: 12pt;
-    transition: all .3s linear;
-    color: #6B5B22;
-    border-bottom: 1px solid #F2E569;
-    opacity: 0;
-  }
-  
-  .path:hover {
-    background-color: #FAC304;
-    color: #6B5B22;
-  }
-  
-  #checkbox-menu:checked~.menu-bar {
-    transform: translateX(250px);
-  }
-  
-  #checkbox-menu:checked~.menu-bar nav a .path {
-    opacity: 1;
-    transition-delay: .3s;
-  }
-  
-  .mburg {
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    position: fixed;
-    top: 25px;
-    left: 25px;
-  }
-  
-  .hamburguer {
-    position: relative;
-    display: block;
-    background: #6B5B22;
-    width: 30px;
-    height: 3px;
-    top: 15px;
-    left: 2px;
-    transition: .5s ease-in-out;
-  }
-  
-  .hamburguer:before,
-  .hamburguer:after {
-    background: #6B5B22;
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transition: .5s ease-in-out;
-  }
-  
-  .hamburguer:before {
-    top: -10px;
-  }
-  
-  .hamburguer:after {
-    bottom: -10px;
   }
 
-  input:checked~label .hamburguer {
-    transform: rotate(45deg);
-  }
-  
-  input:checked~label .hamburguer:before {
-    transform: rotate(90deg);
-    top: 0;
-  }
-  
-  input:checked~label .hamburguer:after {
-    transform: rotate(90deg);
-    bottom: 0;
-  }
-  .up-profile {
-    margin-top: -102px;
-    margin-bottom: -4px;
-    padding-left: 45px;
+    input:checked~label .hamburguer:after {
+      transform: rotate(90deg);
+      bottom: 0;
     }
-    /* .buttons-social {
-        width: auto;
-        margin-top: -73px;
-    } */
+
     .buttons-social {
+      width: 60vw;
+      height: 90px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-evenly;
+
+      background: #F2E569;
+      border: 3px solid #FAC304;
+      border-radius: 0px 0px 4px 4px;
+
+      padding-top: 10px;
+      margin-top: -10vh;
+      margin-bottom: 6px;
+      margin-left: 19.5vw;
+    }
+
+    @media screen and (max-width: 1200px) {
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto' sans-serif;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .menu {
+        background: #F2E569;
+        width: 100%;
+        height: 8%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: inline-flex;
+        justify-content: space-between;
+      }
+      #logo {
+        position: absolute;
+        display: none;
+        width: 4%;
+        top: 50%;
+        left: 89%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%)
+      }
+      #checkbox-menu {
+        display: none;
+      }
+      #icone {
+        position: absolute;
+        cursor: pointer;
+        padding: 20px;
+        top: 20px;
+        left: 20px;
+        z-index: 1;
+      }
+      .beeu {
+        font-family: 'Roboto Slab';
+        font-size: 24px;
+        color: #6B5B22;
+        border: none;
+      }
+      .menu-bar {
+        background-color: #F2E569;
+        height: max-content;
+        width: 15%;
+        position: absolute;
+        transition: all .2s linear;
+        left: -270px;
+      }
+      nav {
+        width: 100%;
+        padding: 30px;
+        position: absolute;
+        top: 80px;
+      }
+      nav a {
+        text-decoration: none;
+      }
+      .path {
+        background-color: #F2E569;
+        padding: 20px;
+        font-size: 12pt;
+        transition: all .3s linear;
+        color: #6B5B22;
+        border-bottom: 1px solid #F2E569;
+        opacity: 0;
+      }
+      .path:hover {
+        background-color: #FAC304;
+        color: #6B5B22;
+      }
+      #checkbox-menu:checked~.menu-bar {
+        transform: translateX(250px);
+      }
+      #checkbox-menu:checked~.menu-bar nav a .path {
+        opacity: 1;
+        transition-delay: .3s;
+      }
+      .mburg {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        position: fixed;
+        top: 25px;
+        left: 25px;
+        margin-top: -12px;
+      }
+      .hamburguer {
+        position: relative;
+        display: block;
+        background: #6B5B22;
+        width: 30px;
+        height: 3px;
+        top: 15px;
+        left: 2px;
+        transition: .5s ease-in-out;
+      }
+      .hamburguer:before, .hamburguer:after {
+        background: #6B5B22;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: .5s ease-in-out;
+      }
+      .hamburguer:before {
+        top: -10px;
+      }
+      r .hamburguer:after {
+        bottom: -10px;
+      }
+      input:checked~label .hamburguer {
+        transform: rotate(45deg);
+      }
+      input:checked~label .hamburguer:before {
+        transform: rotate(90deg);
+        top: 0;
+      }
+      input:checked~label .hamburguer:after {
+        transform: rotate(90deg);
+        bottom: 0;
+      }
+    }
+
+    .up-profile {
+      width: 100%;
+      margin-bottom: -4px;
+      height: 130px;
+    }
+
+    .delete-posts {
+      margin-left: 200px;
       width: auto;
-      margin-top: -78px;
-  }
-    .delete-posts{
-    margin-left: 200px;
-    width: auto;
-    height: 137px;
-    margin-bottom: 10px;
-    font-family: Roboto;
-    font-style: normal;
-    font-size: 11px;
-    color: #6B5B22;
-    margin-top: -137px;
+      height: 137px;
+      margin-bottom: 10px;
+      font-family: Roboto;
+      font-style: normal;
+      font-size: 11px;
+      color: #6B5B22;
+      margin-top: -137px;
     }
+
     .profile-items {
-        width: auto;
+      width: auto;
     }
+
     .update-texts {
+      width: 40vw;
+      height: 40px;
+      margin: 0;
+    }
+
+    #button-edit {
+      margin-left: -20px;
+    }
+
+    .likes-counters {
+      margin: 0;
+    } 
+
+  @media screen and (max-width: 880px) {
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto' sans-serif;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .menu {
+        background: #F2E569;
+        width: 100%;
+        height: 8%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: inline-flex;
+        justify-content: space-between;
+      }
+      #logo {
+        position: absolute;
+        display: none;
+        width: 4%;
+        top: 50%;
+        left: 89%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%)
+      }
+      #checkbox-menu {
+        display: none;
+      }
+      #icone {
+        position: fixed;
+        cursor: pointer;
+        padding: 20px;
+        top: 20px;
+        left: 20px;
+        z-index: 1;
+      }
+      .beeu {
+        font-family: 'Roboto Slab';
+        font-size: 24px;
+        color: #6B5B22;
+        border: none;
+      }
+      .menu-bar {
+        background-color: #F2E569;
+        height: 100%;
+        width: 20%;
+        position: absolute;
+        transition: all .2s linear;
+        left: -270px;
+      }
+      nav {
+        width: 100%;
+        padding: 30px;
+        position: absolute;
+        top: 80px;
+      }
+      nav a {
+        text-decoration: none;
+      }
+      .path {
+        background-color: #F2E569;
+        padding: 20px;
+        font-size: 12pt;
+        transition: all .3s linear;
+        color: #6B5B22;
+        border-bottom: 1px solid #F2E569;
+        opacity: 0;
+      }
+      .path:hover {
+        background-color: #FAC304;
+        color: #6B5B22;
+      }
+      #checkbox-menu:checked~.menu-bar {
+        transform: translateX(250px);
+      }
+      #checkbox-menu:checked~.menu-bar nav a .path {
+        opacity: 1;
+        transition-delay: .3s;
+      }
+      .mburg {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        position: fixed;
+        top: 25px;
+        left: 25px;
+      }
+      .hamburguer {
+        position: relative;
+        display: block;
+        background: #6B5B22;
+        width: 30px;
+        height: 3px;
+        top: 15px;
+        left: 2px;
+        transition: .5s ease-in-out;
+      }
+      .hamburguer:before, .hamburguer:after {
+        background: #6B5B22;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: .5s ease-in-out;
+      }
+      .hamburguer:before {
+        top: -10px;
+      }
+      .hamburguer:after {
+        bottom: -10px;
+      }
+      input:checked~label .hamburguer {
+        transform: rotate(45deg);
+      }
+      input:checked~label .hamburguer:before {
+        transform: rotate(90deg);
+        top: 0;
+      }
+      input:checked~label .hamburguer:after {
+        transform: rotate(90deg);
+        bottom: 0;
+      }
+      .up-profile {
+        margin-bottom: -4px;
+        border-radius: 0px 0px 4px 4px;
+      }
+      .up-profile {
+        margin-bottom: -4px;
+        height: 130px;
+      }
+      .delete-posts {
+        margin-left: 200px;
+        width: auto;
+        height: 137px;
+        margin-bottom: 10px;
+        font-family: Roboto;
+        font-style: normal;
+        font-size: 11px;
+        color: #6B5B22;
+        margin-top: -137px;
+      }
+      .profile-items {
+        width: auto;
+      }
+      .update-texts {
         width: 200px;
         margin-left: 10px;
-    }
-    #button-edit {
+      }
+      #button-edit {
         margin-left: -20px;
+      }
+      .date-posts {
+        margin: 0;
     }
-    .likes-counters {
-        margin-left: 10px;
-
-    }
-    /* .date-posts {
-      margin-left: 190px;
-      width: auto;
-      margin-bottom: 90px;
-      margin-top: -120px;
-      margin-right: 15px;
-    } */
-    .date-posts {
-      margin-left: 190px;
-      width: auto;
-      margin-bottom: 90px;
-      margin-top: -115px;
-      margin-right: 15px;
   }
   
+@media screen and (max-width: 660px) {
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto' sans-serif;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .menu {
+        background: #F2E569;
+        width: 100%;
+        height: 8%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: inline-flex;
+        justify-content: space-between;
+      }
+      #logo {
+        position: absolute;
+        display: none;
+        width: 4%;
+        top: 50%;
+        left: 89%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%)
+      }
+      #checkbox-menu {
+        display: none;
+      }
+      #icone {
+        position: fixed;
+        cursor: pointer;
+        padding: 20px;
+        top: 20px;
+        left: 20px;
+        z-index: 1;
+      }
+      .beeu {
+        font-family: 'Roboto Slab';
+        font-size: 24px;
+        color: #6B5B22;
+        border: none;
+      }
+      .menu-bar {
+        background-color: #F2E569;
+        height: 100%;
+        width: 34%;
+        position: absolute;
+        transition: all .2s linear;
+        left: -270px;
+      }
+      nav {
+        width: 100%;
+        padding: 30px;
+        position: absolute;
+        top: 80px;
+      }
+      nav a {
+        text-decoration: none;
+      }
+      .path {
+        background-color: #F2E569;
+        padding: 20px;
+        font-size: 12pt;
+        transition: all .3s linear;
+        color: #6B5B22;
+        border-bottom: 1px solid #F2E569;
+        opacity: 0;
+      }
+      .path:hover {
+        background-color: #FAC304;
+        color: #6B5B22;
+      }
+      #checkbox-menu:checked~.menu-bar {
+        transform: translateX(250px);
+      }
+      #checkbox-menu:checked~.menu-bar nav a .path {
+        opacity: 1;
+        transition-delay: .3s;
+      }
+      .mburg {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        position: fixed;
+        top: 25px;
+        left: 25px;
+      }
+      .hamburguer {
+        position: relative;
+        display: block;
+        background: #6B5B22;
+        width: 30px;
+        height: 3px;
+        top: 15px;
+        left: 2px;
+        transition: .5s ease-in-out;
+      }
+      .hamburguer:before, .hamburguer:after {
+        background: #6B5B22;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: .5s ease-in-out;
+      }
+      .hamburguer:before {
+        top: -10px;
+      }
+      .hamburguer:after {
+        bottom: -10px;
+      }
+      input:checked~label .hamburguer {
+        transform: rotate(45deg);
+      }
+      input:checked~label .hamburguer:before {
+        transform: rotate(90deg);
+        top: 0;
+      }
+      input:checked~label .hamburguer:after {
+        transform: rotate(90deg);
+        bottom: 0;
+      }
+      .up-profile {
+        margin-top: -102px;
+        margin-bottom: -4px;
+        width: 100%;
+        height: 60vh;
+      }
+      .buttons-social {
+        width: auto;
+        margin-top: -78px;
+      }
+      .delete-posts {
+        margin-left: 200px;
+        width: auto;
+        height: 137px;
+        margin-bottom: 10px;
+        font-family: Roboto;
+        font-style: normal;
+        font-size: 11px;
+        color: #6B5B22;
+        margin-top: -137px;
+      }
+  .profile-items {
+    width: auto;
+  }
+
+  .update-texts {
+    width: 35vw;
+    height: 5vh;
+    margin-right: 5px;
+  }
+
+  .text-post {
+    width: 80vw;
+    height: 15vh;
+  }
+  
+  .profile-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 6vw;
+  }
+
+  .name-profile {
+    margin-left: 5vw
+  }
+
+  .date-posts {
+    width: 60vw;
+    height: 18vh;
+    margin-left: 30vw;
+    margin-top: -60vh;
+    margin-bottom: 12vw;
+    padding-right: 5px;
+    margin-right: 8vw;
+  }
+
+  .buttons-social {
+    display: flex;
+    align-content: space-around;
+    margin-left: 30vw;
+    width: 60vw;
+  }
 }

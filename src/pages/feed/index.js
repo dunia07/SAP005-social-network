@@ -6,12 +6,13 @@ export const Feed = () => {
   const rootElement = document.createElement('div');
   const postHtml = `
     <div>
-    <button>teste</button>
       <h1 class="feed"></h1>      
-      <button class="btn-logout">LogOut</button>
+      <button class="btn-logout">
+        <img src="/images/logout.svg" class="icon-logout"> LogOut
+      </button>
       <form class="form-post" id="form-post">
-        <input class="text-post" id="text-post" placeholder="Tell us something" type="text">
-        <button class="btn-submit" id="btn-submit" type="submit">Submit</button>
+        <input class="text-post" id="text-post" type="text" placeholder="Tell us something">
+        <button class="btn-submit" id="btn-submit" type="submit">Post</button>
       </form>
       <div class="posted-text"></div>
     </div> `;
@@ -56,4 +57,3 @@ export const Feed = () => {
   });
   return rootElement;
 };
-

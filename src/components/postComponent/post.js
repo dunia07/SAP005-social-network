@@ -124,8 +124,8 @@ function renderPost(user) {
               <div id="modal-promocao" class="modal-container> 
                 <div class="modal">
                   <form class="update-edit-post">
-                    <input class="update-texts" id="update-text-${post.id}" placeholder="Edit your post here" type="text">
-                    <button id="button-edit" class='button-update-${post.id}' 
+                    <input class="update-texts"id="update-text-${post.id}" placeholder="Edit your post here" type="text">
+                    <button id="button-edit"class='button-update-${post.id}' 
                       <i><img src="/images/done.svg" class="done-icon">
                     </button>
                   </form>
@@ -152,3 +152,4 @@ export const showPosts = () => firebase.auth().onAuthStateChanged((user) => {
   }
   return null;
 });
+

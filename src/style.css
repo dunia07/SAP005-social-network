@@ -1,4 +1,4 @@
-    * {
+  * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -303,10 +303,6 @@
       height: 15px;
       font-size: 10px;
     }
-/* 
-    .likes-counters {
-      margin-left: 10px;
-    } */
 
     .feed {
       padding-top: 50px;

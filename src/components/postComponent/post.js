@@ -152,3 +152,4 @@ export const showPosts = () => firebase.auth().onAuthStateChanged((user) => {
   }
   return null;
 });
+

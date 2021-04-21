@@ -504,10 +504,6 @@
       margin: 0;
     } 
 
-    /* .date-posts {
-      width: 50vh;
-    } */
-
   @media screen and (max-width: 880px) {
       * {
         margin: 0;
@@ -642,10 +638,11 @@
         margin-bottom: -4px;
         border-radius: 0px 0px 4px 4px;
       }
+
       .up-profile {
-        margin-bottom: -4px;
         height: 130px;
       }
+      
       .delete-posts {
         margin-left: 200px;
         width: auto;
@@ -657,8 +654,18 @@
         color: #6B5B22;
         margin-top: -137px;
       }
+  
       .profile-items {
         width: auto;
+        margin-top: 3%;
+      }
+
+      .profile-pic {
+        margin-left: 4vw;
+      }
+
+      .name-profile{
+        margin-left: 4vw;
       }
       .update-texts {
         width: 200px;
@@ -667,8 +674,15 @@
       #button-edit {
         margin-left: -20px;
       }
+      .btn-logout{
+        margin-top: 5%;
+      }
       .date-posts {
-        margin: 0;
+        margin-top: -12vh;
+    }
+
+    .text-post {
+      height: 14vh;
     }
   }
   
